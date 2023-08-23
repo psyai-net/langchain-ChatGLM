@@ -20,6 +20,9 @@ from server.knowledge_base.kb_doc_api import (list_docs, upload_doc, delete_doc,
 from server.utils import BaseResponse, ListResponse, FastAPI, MakeFastAPIOffline
 from typing import List
 
+from server.knowledge_base.kb_doc_api_plus import create_kb_with_doc
+from server.chat.knowledge_base_rewrite import knowledge_base_rewrite
+
 nltk.data.path = [NLTK_DATA_PATH] + nltk.data.path
 
 
@@ -122,6 +125,18 @@ def create_app():
              tags=["Knowledge Base Management"],
              summary="根据content中文档重建向量库，流式输出处理进度。"
              )(recreate_vector_store)
+    
+    app.post("/local_doc_qa/upload_file",
+             tags=["Knowledge Base Management"],
+             response_model=BaseResponse,
+             summary="上传文件到知识库"
+             )(create_kb_with_doc)
+    
+    app.post("/local_doc_qa/local_doc_rewrite",
+             tags=["Knowledge Base Management"],
+             response_model=ListResponse,
+             summary="根据知识库进行内容编写"
+             )(knowledge_base_rewrite)
 
     return app
 
