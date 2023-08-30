@@ -99,7 +99,7 @@ if not os.path.exists(LOG_PATH):
     os.mkdir(LOG_PATH)
 
 # 知识库默认存储路径
-KB_ROOT_PATH = os.path.join("/data/hujiaxin", "knowledge_base_bak")
+KB_ROOT_PATH = os.path.join("/data", "knowledge_base")
 
 # 数据库默认存储路径。
 # 如果使用sqlite，可以直接修改DB_ROOT_PATH；如果使用其它数据库，请直接修改SQLALCHEMY_DATABASE_URI。
