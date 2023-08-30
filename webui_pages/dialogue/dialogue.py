@@ -52,9 +52,8 @@ def dialogue_page(api: ApiRequest):
             # sac.alert(text, description="descp", type="success", closable=True, banner=True)
 
         dialogue_mode = st.selectbox("请选择对话模式",
-                                     ["LLM 对话",
-                                      "知识库问答",
-                                      "搜索引擎问答",
+                                     ["知识库问答",
+                                      "LLM 对话",
                                       ],
                                      on_change=on_mode_change,
                                      key="dialogue_mode",

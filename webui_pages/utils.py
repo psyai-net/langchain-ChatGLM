@@ -10,6 +10,7 @@ from configs.model_config import (
     VECTOR_SEARCH_TOP_K,
     SEARCH_ENGINE_TOP_K,
     logger,
+    PROMPT_TEMPLATE,
 )
 import httpx
 import asyncio

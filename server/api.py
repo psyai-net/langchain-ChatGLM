@@ -21,7 +21,7 @@ from server.utils import BaseResponse, ListResponse, FastAPI, MakeFastAPIOffline
 from typing import List
 
 from server.knowledge_base.kb_doc_api_plus import create_kb_with_doc
-from server.chat.knowledge_base_rewrite import knowledge_base_rewrite
+from server.chat.knowledge_base_rewrite import knowledge_base_rewrite, RewriteResponse
 
 nltk.data.path = [NLTK_DATA_PATH] + nltk.data.path
 
@@ -134,7 +134,7 @@ def create_app():
     
     app.post("/local_doc_qa/local_doc_rewrite",
              tags=["Knowledge Base Management"],
-             response_model=ListResponse,
+             response_model=RewriteResponse,
              summary="根据知识库进行内容编写"
              )(knowledge_base_rewrite)
 

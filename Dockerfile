@@ -12,4 +12,4 @@ RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python3 get-pip.p
 RUN pip3 install -r requirements_api.txt -i https://pypi.mirrors.ustc.edu.cn/simple/
 RUN pip3 install -r requirements_webui.txt -i https://pypi.mirrors.ustc.edu.cn/simple/ && rm -rf `pip3 cache dir`
 
-CMD ["python3","-u", "api.py"]
+CMD ["python3","startup.py", "--all-webui"]

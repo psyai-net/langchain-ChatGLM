@@ -269,3 +269,10 @@ def knowledge_base_page(api: ApiRequest):
             st.toast(ret.get("msg", " "))
             time.sleep(1)
             st.experimental_rerun()
+
+        st.divider()
+
+        global PROMPT_TEMPLATE
+
+        PROMPT_TEMPLATE = st.text_area("编辑提示词模版：", PROMPT_TEMPLATE, height=300)
+
