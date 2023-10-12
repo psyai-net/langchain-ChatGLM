@@ -58,8 +58,9 @@ llm_model_dict = {
     },
 
     "chatglm2-6b-32k": {
-        "local_model_path": "THUDM/chatglm2-6b-32k",  # "THUDM/chatglm2-6b-32k",
-        "api_base_url": "http://localhost:8888/v1",  # "URL需要与运行fastchat服务端的server_config.FSCHAT_OPENAI_API一致
+        # "local_model_path": "THUDM/chatglm2-6b-32k",
+        "local_model_path": "/data/hujiaxin/repository/chatglm2-6b-32k",
+        "api_base_url": "http://127.0.0.1:8888/v1",  # "URL需要与运行fastchat服务端的server_config.FSCHAT_OPENAI_API一致
         "api_key": "EMPTY"
     },
 
